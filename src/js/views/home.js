@@ -3,11 +3,10 @@ import { Context } from "../store/appContext";
 import { CharacterCard } from "../component/CharacterCard.jsx";
 import { PlanetCard } from "../component/PlanetCard.jsx";
 import { StarshipCard } from "../component/StarshipCard.jsx";
-import "../../styles/home.css";
 import { useParams } from "react-router";
 
 export const Home = () => {
-	const { store, actions } = useContext(Context);
+	const { store } = useContext(Context);
 	const { id } = useParams()
 	const characters = store.characters
 	const planets = store.planets
@@ -19,8 +18,7 @@ export const Home = () => {
 		<div className="container-fluid" id="homePage">
 
 			<div className="row mt-4 justify-content-center ">
-				<div className="col-12" >
-				{/* <div className="col-12" style={{ width: "90%"}}> */}
+				<div className="col-12" style={{ width: "90%"}}>
 					<h1>Characters</h1>
 					<div className="row card-row d-flex flex-nowrap flex-row">
 						{characters?.map((character, index) => {
@@ -31,23 +29,21 @@ export const Home = () => {
 			</div>
 			
 			<div className="row mt-4 justify-content-center ">
-				<div className="col-12" >
-				{/* <div className="col-12" style={{ width: "90%"}}> */}
+				<div className="col-12" style={{ width: "90%"}}>
 					<h1>Planets</h1>
 					<div className="row card-row d-flex flex-nowrap flex-row">
 						{planets?.map((planet, index) => {
-							return <PlanetCard name={planet.name} imageURL={planetImages[index]} population={planet.population} climate={planet.climate} terrain={planet.terrain} link={"/planets/"+index} key={index} />
+							return <PlanetCard name={planet.name} imageURL={planetImages[index]} population={planet.population} climate={planet.climate} terrain={planet.terrain} link={"/planets/"+index} key={index} id={index} type={`planets`} />
 						})}
 					</div>
 				</div>
 			</div>
-			<div className="row mt-4 justify-content-center ">
-				<div className="col-12" >
-				{/* <div className="col-12" style={{ width: "90%"}}> */}
+			<div className="row my-4 pd-5 justify-content-center ">
+				<div className="col-12" style={{ width: "90%"}}>
 					<h1>Starships</h1>
 					<div className="row card-row d-flex flex-nowrap flex-row">
 						{ships?.map((ship, index) => {
-							return <StarshipCard name={ship.name} imageURL={shipImages[index]} manufacturer={ship.manufacturer} cost={ship.cost_in_credits} passengers={ship.passengers} link={"/starships/"+index} key={index} />
+							return <StarshipCard name={ship.name} imageURL={shipImages[index]} manufacturer={ship.manufacturer} cost={ship.cost_in_credits} passengers={ship.passengers} link={"/starships/"+index} key={index} id={index} type={`starships`}/>
 						})}
 					</div>
 				</div>

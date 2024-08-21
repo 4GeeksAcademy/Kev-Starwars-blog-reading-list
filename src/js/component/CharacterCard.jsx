@@ -15,9 +15,11 @@ export const CharacterCard = (props) => {
         <div className="card-body">
           <h4 className="card-title">{props.name}</h4>
           <p className="card-text"><b>Birth Year:</b> {props.birth_year}<br /> <b>Height:</b> {props.height}<br/> <b>Eye Color:</b> {props.eye_color}</p>
-          <Link to={props.link} className="btn btn-warning">Learn more</Link>
-          <i onClick={() =>
-            inFavs === 1 ? actions.deleteFave(name) : actions.addFave(props)} className={inFavs === 1 ? "fas fa-heart heart" : "far fa-heart heart"}></i>
+          <div className="d-flex justify-content-between align-items-center">
+            <Link to={props.link} className="btn btn-warning">Learn more</Link>
+            <i onClick={() =>
+              inFavs === 1 ? actions.deleteFave(name) : actions.addFave(props)} className={inFavs === 1 ? "fas fa-heart heart" : "far fa-heart heart"}></i>
+          </div>
         </div>
       </div>
     </div>

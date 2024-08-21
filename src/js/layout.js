@@ -9,7 +9,7 @@ import {StarshipDetails} from "./views/StarshipDetails.js"
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
-import { Footer } from "./component/footer";
+// import { Footer } from "./component/footer";
 
 //create your first component
 const Layout = () => {
@@ -27,9 +27,9 @@ const Layout = () => {
 						<Route path="/characters/:id" element={<CharacterDetails />} />
 						<Route path="/planets/:id" element={<PlanetDetails />} />
 						<Route path="/starships/:id" element={<StarshipDetails />} />
-						<Route path="*" element={<h1>Not found!</h1>} />
+						<Route path="*" element={<h1>Not found! 404</h1>} />
 					</Routes>
-					<Footer />
+					{/* <Footer /> */}
 				</ScrollToTop>
 			</BrowserRouter>
 		</div>

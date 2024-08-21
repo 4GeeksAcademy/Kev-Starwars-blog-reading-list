@@ -1,3 +1,28 @@
 /* 
     General Styles
 */
+body {
+    background-color: black;
+    color: #ffffff;
+}
+
+.card-row {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.fa-trash-alt {
+    padding-left: 3px;
+}
+.fa-trash-alt:hover {
+    color: red;
+    cursor: pointer;
+    transition: .1s;
+} 
+
+.heart {
+    margin-left: 10px;
+}
+.heart:hover {
+    cursor: pointer;
+}

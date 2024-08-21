@@ -3,7 +3,7 @@ import { Context } from "../store/appContext";
 import { useParams } from "react-router";
 
 export const CharacterDetails = (props) => {
-    const {store, actions} = useContext(Context)
+    const {store} = useContext(Context)
     const {id} = useParams()
     const characters = store.characters
     return(
